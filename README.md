@@ -1,4 +1,7 @@
 # Infinite_Storage_Glitch
+
+ <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634050/wceytjpwvty5jgzisr4j.webp"/>
+
  YouTube as Cloud Storage: Store Any Files You Want
 
 ![ezgif-1-0299af809c](https://user-images.githubusercontent.com/86147453/221376499-1e7e894a-1d76-4d59-90ec-90ccf7fb6fd0.gif)
@@ -31,6 +34,8 @@ I dont know rust so I recreated the same project in python
 # Demo 
  [YouTube Link](https://youtu.be/wsbZO4kmXFI)
 
+ <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634052/ul5ys2vdjzjwonctnuet.webp"/>
+
 To reduce the risk of corruption, the program uses larger pixel blocks in binary mode, typically 2x2 blocks.
 
 This program consists of several functions that allow for the conversion of files to binary format, and for the creation of videos from a file.
@@ -39,6 +44,9 @@ This program consists of several functions that allow for the conversion of file
 This function takes no parameters and returns a string of 0's and 1's representing the binary data of a file with a .zip extension. It does this by first determining the file size and reading the file as binary data. The binary data is then converted to a string of 0's and 1's and returned.
 
 ## binary_to_video(bin_string, width=1920, height=1080, pixel_size=4, fps=24)
+
+ <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634051/ybed78bbq1wporalxhh3.webp"/>
+
 This function takes a string of binary data as bin_string and several optional parameters that determine the size and framerate of the resulting video. It returns a video file in .mp4 format. The function first calculates the total number of pixels needed to represent the binary data and the number of pixels that can fit in one image. It then creates an array of frames, each of which corresponds to one image that contains the binary data. The frames are created by iterating through each row and column of binary digits and determining the color of each pixel based on the binary digit. The frames are then added to the array of frames. Finally, the frames are used to create a video file using the MoviePy library and written to disk.
 
 ## process_images(frames)
@@ -50,7 +58,22 @@ This function takes no parameters and prompts the user to enter the name of a fi
 ## binaryToFile(binary_filename)
 This function takes a string of binary data as binary_filename and writes it to a file named output.zip. It does this by first converting the binary data to binary format and then writing the binary data to the output file.
 
+ <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634052/ysvz0w6c16kpjl9mfflt.webp"/>
+
 Overall, this program provides a simple way to convert files to binary format and create videos from binary data, as well as convert binary data back to files.
 
 
+---
 
+## License
+
+This project is licensed under the [Apache-2.0](LICENSE).
+See the LICENSE file for full license text.
+
+---
+
+<div align="center">
+
+**2024 · © phiUture · All Rights Reserved**
+
+</div>
