@@ -1,111 +1,172 @@
-# InfinityValut
+<div align="center">
 
- <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634050/wceytjpwvty5jgzisr4j.webp"/>
+<a href="https://phiuture.com/tech">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://res.cloudinary.com/b0tb1mho/image/upload/v1794310202/ymqwl9jz0hpsmdoegmwx.png" />
+    <img src="https://res.cloudinary.com/b0tb1mho/image/upload/b_black,r_24/v1794310202/ymqwl9jz0hpsmdoegmwx.png" alt="phiUture Tech" width="220" />
+  </picture>
+</a>
 
- YouTube as Cloud Storage: Store Any Files You Want
+<em>Thoughtfully Engineered. Crafted for You.</em>
 
-![ezgif-1-0299af809c](https://user-images.githubusercontent.com/86147453/221376499-1e7e894a-1d76-4d59-90ec-90ccf7fb6fd0.gif)
+<br/><br/>
 
-How to use
--------------
-Install Requirments
+<img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784639185/bbuq4h2ifhnslgzeam65.webp" alt="InfinityVault icon" width="96" />
 
+# InfinityVault
 
-1. Archive to zip all the files you will be uploading
-2. Run the executable
-3. It will give you three options file to video , video to file , download video from youtube select option you need and program will start executing 
-4. Upload the video to your YouTube channel. You probably want to keep it up as unlisted
-5. Use the download option to get the video back
-6. Use the dislodge option to get your files back from the downloaded video
-7. PROFIT
- 
+### *Transform ordinary YouTube videos into experimental cloud file storage.*
 
-input file should be zipped (.zip) file 
+[![Watch the demo](https://img.shields.io/badge/Watch-the_demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/wsbZO4kmXFI)
+[![Open on phiUture](https://img.shields.io/badge/Open_on-phiUture-000000?style=for-the-badge)](https://phiuture.com/tech/InfinityVault)
 
-keep only one zip file in same directery 
+![status Research](https://img.shields.io/badge/status-Research-6E7781?style=flat-square)
+[![license Apache 2.0](https://img.shields.io/badge/license-Apache_2.0-0A84FF?style=flat-square)](LICENSE)
+![launched 2024](https://img.shields.io/badge/launched-2024-7C3AED?style=flat-square)
 
+<br/>
 
+<img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634050/wceytjpwvty5jgzisr4j.webp" alt="InfinityVault — a phiUture Tech product" width="100%" />
 
-This program inspired from DvorakDwarf Infinite-Storage-Glitch 
-https://github.com/DvorakDwarf/Infinite-Storage-Glitch check out his project
+</div>
 
-I dont know rust so I recreated the same project in python 
+---
 
-# Demo 
- [YouTube Link](https://youtu.be/wsbZO4kmXFI)
+## Overview
 
- <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634052/ul5ys2vdjzjwonctnuet.webp"/>
+InfinityVault is a proof-of-concept research project that explores using YouTube as a large-scale file storage medium by encoding ZIP archives into video frames and reconstructing them back into their original files. It demonstrates how visual media platforms can be repurposed for unconventional data storage through binary encoding techniques.
 
-To reduce the risk of corruption, the program uses larger pixel blocks in binary mode, typically 2x2 blocks.
+---
 
-This program consists of several functions that allow for the conversion of files to binary format, and for the creation of videos from a file.
+## How to use
 
-## file_to_binary()
-This function takes no parameters and returns a string of 0's and 1's representing the binary data of a file with a .zip extension. It does this by first determining the file size and reading the file as binary data. The binary data is then converted to a string of 0's and 1's and returned.
+1. Install the requirements.
+2. Zip everything you want to store into a single `.zip` archive, and keep only that one archive in
+   the working directory.
+3. Run the executable. It offers three modes: **file to video**, **video to file**, and
+   **download video from YouTube**.
+4. Choose *file to video*, then upload the resulting video to your YouTube channel — unlisted is a
+   sensible default.
+5. When you need the files back, use the download mode to fetch the video.
+6. Choose *video to file* to rebuild the original archive from the downloaded video.
 
-## binary_to_video(bin_string, width=1920, height=1080, pixel_size=4, fps=24)
+![InfinityVault in action](https://user-images.githubusercontent.com/86147453/221376499-1e7e894a-1d76-4d59-90ec-90ccf7fb6fd0.gif)
 
- <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634051/ybed78bbq1wporalxhh3.webp"/>
+---
 
-This function takes a string of binary data as bin_string and several optional parameters that determine the size and framerate of the resulting video. It returns a video file in .mp4 format. The function first calculates the total number of pixels needed to represent the binary data and the number of pixels that can fit in one image. It then creates an array of frames, each of which corresponds to one image that contains the binary data. The frames are created by iterating through each row and column of binary digits and determining the color of each pixel based on the binary digit. The frames are then added to the array of frames. Finally, the frames are used to create a video file using the MoviePy library and written to disk.
+## Demo
 
-## process_images(frames)
-This function takes an array of frames as input and returns a string of 0's and 1's representing the binary data contained in the frames. It does this by iterating through each frame and converting it to grayscale. It then iterates through each row and column of pixels and determines the binary digit based on the color of each pixel. The binary digits are concatenated into a single string and returned.
+[Watch the demo on YouTube](https://youtu.be/wsbZO4kmXFI)
 
-## imageToText()
-This function takes no parameters and prompts the user to enter the name of a file to convert to binary format. It then calls the file_to_binary() function and stores the resulting binary data in a file named binary.txt.
+<img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634052/ul5ys2vdjzjwonctnuet.webp" alt="InfinityVault demo"/>
 
-## binaryToFile(binary_filename)
-This function takes a string of binary data as binary_filename and writes it to a file named output.zip. It does this by first converting the binary data to binary format and then writing the binary data to the output file.
+---
 
- <img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634052/ysvz0w6c16kpjl9mfflt.webp"/>
+## How it works
 
-Overall, this program provides a simple way to convert files to binary format and create videos from binary data, as well as convert binary data back to files.
+Video platforms compress what they store, so binary mode writes each bit as a larger block of
+pixels — typically 2×2 — to reduce the risk of corruption. The program is a small set of functions
+that turn a file into binary, binary into video frames, and back again.
 
+### `file_to_binary()`
+
+Takes no parameters and returns a string of 0s and 1s representing the binary data of a `.zip`
+file. It determines the file size, reads the file as binary, converts it to a string of 0s and 1s,
+and returns it.
+
+### `binary_to_video(bin_string, width=1920, height=1080, pixel_size=4, fps=24)`
+
+<img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634051/ybed78bbq1wporalxhh3.webp" alt="Binary data encoded as video frames"/>
+
+Takes the binary string plus optional parameters for the size and frame rate of the video, and
+returns an `.mp4` file. It calculates the total number of pixels the data needs and how many fit in
+one image, then builds the frames row by row and column by column, colouring each pixel by its
+binary digit. Finally the frames are written to disk as a video with MoviePy.
+
+### `process_images(frames)`
+
+Takes an array of frames and returns the binary string they contain. Each frame is converted to
+grayscale, and each pixel's colour is read back as a binary digit; the digits are concatenated
+into a single string.
+
+### `imageToText()`
+
+Takes no parameters, prompts for the name of the file to convert, calls `file_to_binary()`, and
+stores the result in `binary.txt`.
+
+### `binaryToFile(binary_filename)`
+
+Takes the binary data and writes it back out as `output.zip`.
+
+<img src="https://res.cloudinary.com/b0tb1mho/image/upload/v1784634052/ysvz0w6c16kpjl9mfflt.webp" alt="Rebuilding the original files from video"/>
+
+Together these make a complete round trip: files to binary to video, and video back to binary to
+files.
+
+---
+
+## Credits
+
+InfinityVault is a Python implementation of the idea behind
+[DvorakDwarf's Infinite-Storage-Glitch](https://github.com/DvorakDwarf/Infinite-Storage-Glitch),
+which is written in Rust — the original is well worth a look.
 
 ---
 
 ## License
 
-This project is licensed under the [Apache-2.0](LICENSE).
-See the LICENSE file for full license text.
+Licensed under the **Apache License 2.0** — see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
+
+Copyright © 2024 Bitan Paul, phiUture. All Rights Reserved.
 
 ---
 
-## About phiUture
+## About phiUture Tech
 
+**InfinityVault** is built by **[phiUture Tech](https://phiuture.com/tech)** — *Thoughtfully Engineered. Crafted for You.*
 
-Welcome to phiUture — Beautiful Technology. Centered Around You. Shaping Tomorrow.
+phiUture Tech is the software half of **[phiUture](https://phiuture.com)** — *Technically Creative.* —
+an independent studio with one vision: *Shaping the future for you through technology and creativity.*
+The name is the philosophy: **φ**, the golden ratio, for craft and balance, and **U** for you — the
+person every product is built around. *Thoughtfully Engineered.* means every product is designed
+before it is built; *Crafted for You.* means the engineering exists so the experience feels effortless.
 
-Inspired by the Golden Ratio (φ), our name represents beautiful, intelligent engineering, while the "U" stands for You—placing people at the center of every solution we build.
+phiUture Tech builds AI & data products, agentic systems, automation, applications, research and
+games. Its sister half, **[phiUture Studios](https://phiuture.com/studios)** — *Entertainment First.
+Technology Follows.* — makes original music and film.
 
-phiUture is an AI-first software company creating intelligent products, automation systems, and modern digital experiences. This channel documents the journey of building practical AI solutions, from concept to deployment.
+<div align="center">
 
-```text
-Here you'll find:
-• AI applications and product demos
-• AI agents and automation workflows
-• Web and mobile app showcases
-• Machine Learning and Data Engineering projects
-• Product launches and development insights
-• UI/UX and software engineering content
-• Tutorials, experiments, and future innovations
-```
+[![Explore phiUture Tech](https://img.shields.io/badge/Explore-phiUture_Tech-000000?style=for-the-badge)](https://phiuture.com/tech)
+[![YouTube @phiuture](https://img.shields.io/badge/YouTube-%40phiuture-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@phiuture)
+[![GitHub thebitanpaul](https://img.shields.io/badge/GitHub-thebitanpaul-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/thebitanpaul)
+[![Business email](https://img.shields.io/badge/Business-thephiuture%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thephiuture@gmail.com)
+
+</div>
+
+<details>
+<summary><b>Every phiUture link</b></summary>
+
+<br/>
 
 | Personal | Business | Artist |
 |----------|----------|--------|
 | [![GitHub](https://img.shields.io/badge/GitHub-thebitanpaul-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/thebitanpaul) | [![Website](https://img.shields.io/badge/Website-phiUture-000000?style=for-the-badge&logo=googlechrome&logoColor=white)](https://phiuture.com) | [![YouTube](https://img.shields.io/badge/YouTube-thebitanpaul-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@thebitanpaul) |
 | [![LinkedIn](https://img.shields.io/badge/LinkedIn-thebitanpaul-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/thebitanpaul) | [![YouTube](https://img.shields.io/badge/YouTube-phiUture-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@phiuture) | [![Spotify](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/artist/6ghDcCBlKzJIgm3e586jpV) |
-| [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/thebitanpaul) | [![Google Play](https://img.shields.io/badge/Google_Play-Developer-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/dev?id=6358474525178045834&hl=en) | [![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtubemusic&logoColor=white)](https://music.youtube.com/playlist?list=OLAK5uy_km3cjEB2zl59Etcgv9UBKWw800O9G3NdE) |
+| [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/thebitanpaul) [![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white)](https://www.threads.com/@thebitanpaul) | [![Google Play](https://img.shields.io/badge/Google_Play-Developer-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/dev?id=6358474525178045834&hl=en) | [![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtubemusic&logoColor=white)](https://music.youtube.com/playlist?list=OLAK5uy_km3cjEB2zl59Etcgv9UBKWw800O9G3NdE) |
 | [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/thebitanpaul) | [![Email](https://img.shields.io/badge/Business_Email-thephiuture%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thephiuture@gmail.com) | [![Amazon Music](https://img.shields.io/badge/Amazon_Music-46C3D0?style=for-the-badge&logo=amazonmusic&logoColor=white)](https://music.amazon.com/albums/B0G52QMYDC) |
 | [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/thebitanpaul_) |  | [![Apple Music](https://img.shields.io/badge/Apple_Music-FA243C?style=for-the-badge&logo=applemusic&logoColor=white)](https://music.apple.com/us/artist/thebitanpaul/1858534880) |
 | [![Snapchat](https://img.shields.io/badge/Snapchat-FFFC00?style=for-the-badge&logo=snapchat&logoColor=000000)](https://snapchat.com/t/UgO0Iywr) |  | [![JioSaavn](https://img.shields.io/badge/JioSaavn-2BC5B4?style=for-the-badge&logo=jiosaavn&logoColor=white)](https://www.jiosaavn.com/artist/thebitanpaul-songs/zuo0NgC65gQ_) |
 | [![Email](https://img.shields.io/badge/Personal_Email-thebitanpaul%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thebitanpaul@gmail.com) |  |  |
 
+</details>
 
+<br/>
 
 <div align="center">
 
-**2024 · © phiUture · All Rights Reserved**
+**phiUture Tech** · *Thoughtfully Engineered. Crafted for You.*
+
+<sub>© 2024 phiUture · Apache License 2.0</sub>
 
 </div>
